@@ -36,6 +36,10 @@
 //     e.target.style.background = 'blue';
 //   });
 
+
+// -------------------------------------------------------------------
+// Array Methods Practice
+
 // Translate border-left-width to borderLeftWidth
 // importance: 5
 // Write the function camelize(str) that changes dash-separated words like “my-short-string” into camel-cased “myShortString”.
@@ -49,12 +53,36 @@
 // camelize("-webkit-transition") == 'WebkitTransition';
 // P.S. Hint: use split to split the string into an array, transform it and join back.
 
-function camelize (str) {
-  let splitString = str.split('-');
-  let capitalizedArray = splitString.slice(1).map(capitalized => capitalized.charAt(0).toUpperCase() + capitalized.slice(1));
-  let capitalizedString = capitalizedArray.join('');
-  let camelized = splitString[0].concat(capitalizedString);
-  console.log(camelized);
+
+// function camelize (str) {
+//   let splitString = str.split('-');
+//   let capitalizedArray = splitString.slice(1).map(capitalized => capitalized.charAt(0).toUpperCase() + capitalized.slice(1));
+//   let capitalizedString = capitalizedArray.join('');
+//   let camelized = splitString[0].concat(capitalizedString);
+//   console.log(camelized);
+// }
+
+// console.log(camelize("-webkit-transition"));
+
+// -------------------------------------------------------------------
+
+// Write a function filterRange(arr, a, b) that gets an array arr, looks for elements with values higher or 
+// equal to a and lower or equal to b and return a result as an array.
+// The function should not modify the array. It should return the new array.
+// For instance:
+// let arr = [5, 3, 8, 1];
+// let filtered = filterRange(arr, 1, 4);
+// alert( filtered ); // 3,1 (matching values)
+// alert( arr ); // 5,3,8,1 (not modified)
+
+function filterRange(arr, a, b) {
+  // take in array and run a filter on it.
+  // check if the value is <= a and >=b
+  // return the new array
+  let filteredArray = arr.filter(ar => ar >= a && ar <= b);
+  return filteredArray;
 }
 
-console.log(camelize("-webkit-transition"));
+let array = [5, 3, 8, 1];
+
+console.log(filterRange(array, 1, 4));
