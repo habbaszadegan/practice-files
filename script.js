@@ -97,35 +97,31 @@
 // filterRangeInPlace(arr, 1, 4); // removed the numbers except from 1 to 4
 // alert( arr ); // [3, 1]
 
-function filterRangeInPlace (arr, a, b) {
-  // run a loop and if statement checking if the number[i] is within range
-  // splice
-  // FAILED: let filtered = arr.filter(ar => ar >= a && ar <=b);
-  for (let i = 0; i < arr.length; i++) {
-    if (arr[i] >= a && arr[i] >= b) {
-      arr.splice(i, 1);
-    }
-  }
-}
-let array = [5, 3, 8, 1];
-filterRangeInPlace(array, 1, 4)
-console.log(array);
+// function filterRangeInPlace (arr, a, b) {
+//   // run a loop and if statement checking if the number[i] is within range
+//   // splice array at current index
+//   for (let i = 0; i < arr.length; i++) {
+//     if (arr[i] >= a && arr[i] >= b) {
+//       arr.splice(i, 1);
+//     }
+//   }
+// }
+// let array = [5, 3, 8, 1];
+// filterRangeInPlace(array, 1, 4)
+// console.log(array);
 
+// -------------------------------------------------------------------
 
-// Incorrect splice argument: The splice method expects either an index or an array of indexes to 
-// specify which elements to remove. In this case, you're passing a function that doesn't actually 
-// correspond to valid indexes.
+// Sort in decreasing order
+// importance: 4
+// let arr = [5, 2, 1, -10, 8];
 
-// Missing loop: To remove elements outside the range, you need to iterate through the array and use splice 
-// to remove them one by one.
+// // ... your code to sort it in decreasing order
 
-let users = [
-  {id: 1, name: "John"},
-  {id: 2, name: "Pete"},
-  {id: 3, name: "Mary"}
-];
+// alert( arr ); // 8, 5, 2, 1, -10
 
-// returns array of the first two users
-let someUsers = users.filter(item => item.id < 3);
+let arr = [5, 2, 1, -10, 8];
 
-alert(someUsers.length); // 2
+let sortedArr = arr.sort((a, b) => a > b ? -1 : 1);
+
+console.log(sortedArr);
