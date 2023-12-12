@@ -75,14 +75,57 @@
 // alert( filtered ); // 3,1 (matching values)
 // alert( arr ); // 5,3,8,1 (not modified)
 
-function filterRange(arr, a, b) {
-  // take in array and run a filter on it.
-  // check if the value is <= a and >=b
-  // return the new array
-  let filteredArray = arr.filter(ar => ar >= a && ar <= b);
-  return filteredArray;
+// function filterRange(arr, a, b) {
+//   // take in array and run a filter on it.
+//   // check if the value is <= a and >=b
+//   // return the new array
+//   let filteredArray = arr.filter(ar => ar >= a && ar <= b);
+//   return filteredArray;
+// }
+
+// let array = [5, 3, 8, 1];
+
+// console.log(filterRange(array, 1, 4));
+
+// -------------------------------------------------------------------
+
+// Write a function filterRangeInPlace(arr, a, b) that gets an array arr and removes from it all values 
+// except those that are between a and b. The test is: a ≤ arr[i] ≤ b.
+// The function should only modify the array. It should not return anything.
+// For instance:
+// let arr = [5, 3, 8, 1];
+// filterRangeInPlace(arr, 1, 4); // removed the numbers except from 1 to 4
+// alert( arr ); // [3, 1]
+
+function filterRangeInPlace (arr, a, b) {
+  // run a loop and if statement checking if the number[i] is within range
+  // splice
+  // FAILED: let filtered = arr.filter(ar => ar >= a && ar <=b);
+  for (let i = 0; i < arr.length; i++) {
+    if (arr[i] >= a && arr[i] >= b) {
+      arr.splice(i, 1);
+    }
+  }
 }
-
 let array = [5, 3, 8, 1];
+filterRangeInPlace(array, 1, 4)
+console.log(array);
 
-console.log(filterRange(array, 1, 4));
+
+// Incorrect splice argument: The splice method expects either an index or an array of indexes to 
+// specify which elements to remove. In this case, you're passing a function that doesn't actually 
+// correspond to valid indexes.
+
+// Missing loop: To remove elements outside the range, you need to iterate through the array and use splice 
+// to remove them one by one.
+
+let users = [
+  {id: 1, name: "John"},
+  {id: 2, name: "Pete"},
+  {id: 3, name: "Mary"}
+];
+
+// returns array of the first two users
+let someUsers = users.filter(item => item.id < 3);
+
+alert(someUsers.length); // 2
