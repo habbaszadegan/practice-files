@@ -139,10 +139,38 @@
 // alert( sorted ); // CSS, HTML, JavaScript
 // alert( arr ); // HTML, JavaScript, CSS (no changes)
 
-function copySorted(arr) {
-  let copy = [...arr];
-  return copy.sort();
+// function copySorted(arr) {
+//   let copy = [...arr];
+//   return copy.sort();
+// }
+
+// let array = ["HTML", "JavaScript", "CSS"];
+// console.log(copySorted(array));
+
+// -------------------------------------------------------------------
+
+// Map to names
+// importance: 5
+// You have an array of user objects, each one has user.name. Write the code that converts it into an array of names.
+
+// For instance:
+
+// let john = { name: "John", age: 25 };
+// let pete = { name: "Pete", age: 30 };
+// let mary = { name: "Mary", age: 28 };
+
+// let users = [ john, pete, mary ];
+// let names = /* ... your code */
+// alert( names ); // John, Pete, Mary
+
+function namesArray (objUsers) {
+    let names = objUsers.map(objUser => objUser.name.concat([]));
+    return names;
 }
 
-let array = ["HTML", "JavaScript", "CSS"];
-console.log(copySorted(array));
+let john = { name: "John", age: 25 };
+let pete = { name: "Pete", age: 30 };
+let mary = { name: "Mary", age: 28 };
+
+let users = [ john, pete, mary ];
+console.log(namesArray(users));
