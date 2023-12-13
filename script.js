@@ -163,14 +163,61 @@
 // let names = /* ... your code */
 // alert( names ); // John, Pete, Mary
 
-function namesArray (objUsers) {
-    let names = objUsers.map(objUser => objUser.name.concat([]));
-    return names;
+// function namesArray (objUsers) {
+//     let names = objUsers.map(objUser => objUser.name.concat([]));
+//     return names;
+// }
+
+// let john = { name: "John", age: 25 };
+// let pete = { name: "Pete", age: 30 };
+// let mary = { name: "Mary", age: 28 };
+
+// let users = [ john, pete, mary ];
+// console.log(namesArray(users));
+
+// -------------------------------------------------------------------
+
+// Map to objects
+// importance: 5
+// You have an array of user objects, each one has name, surname and id.
+
+// Write the code to create another array from it, of objects with id and fullName, where fullName is generated from name and surname.
+
+// For instance:
+
+// let john = { name: "John", surname: "Smith", id: 1 };
+// let pete = { name: "Pete", surname: "Hunt", id: 2 };
+// let mary = { name: "Mary", surname: "Key", id: 3 };
+
+// let users = [ john, pete, mary ];
+// let usersMapped = /* ... your code ... */
+
+// /*
+// usersMapped = [
+//   { fullName: "John Smith", id: 1 },
+//   { fullName: "Pete Hunt", id: 2 },
+//   { fullName: "Mary Key", id: 3 }
+// ]
+// */
+
+// alert( usersMapped[0].id ) // 1
+// alert( usersMapped[0].fullName ) // John Smith
+// So, actually you need to map one array of objects to another. Try using => here. There’s a small catch.
+
+// create a new array with objects 'fullName' and 'id'
+
+function usersMapped (users) {
+    let fullNameAndID = [];
+    for (let user of users) {
+        fullNameAndID.push({fullName: `${user.name} ${user.surname}`, id: user.id});
+    }
+    return fullNameAndID;
 }
 
-let john = { name: "John", age: 25 };
-let pete = { name: "Pete", age: 30 };
-let mary = { name: "Mary", age: 28 };
+let john = { name: "John", surname: "Smith", id: 1 };
+let pete = { name: "Pete", surname: "Hunt", id: 2 };
+let mary = { name: "Mary", surname: "Key", id: 3 };
 
 let users = [ john, pete, mary ];
-console.log(namesArray(users));
+
+console.log(usersMapped(users));
